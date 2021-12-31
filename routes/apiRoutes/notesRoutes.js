@@ -27,14 +27,11 @@ router.post('/notes', (req, res) => {
             console.log(string);
             res.json(string)
         })
-        // console.log(result);
-        // console.log(req.body);
-        // console.log([...result, req.body]);
       })
 })
 
-router.delete('/notes', (req, res) => {
+// router.delete('/notes' + '/:id', (req, res) => {
     
-})
+// })
 
 module.exports = router;

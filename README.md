@@ -18,4 +18,4 @@ The following image shows a screenshot of the application: ![ApplicationScreensh
 
 You can access the GitHub repository here: https://github.com/fssaberi/note-taker.git. 
 
-You can access the webpage here: https://fssaberi.github.io/note-taker/. 
+You can access the webpage here: https://morning-dusk-90472.herokuapp.com/. 

@@ -1,20 +1,40 @@
+const fs = require('fs');
 const router = require('express').Router();
-const { notes } = require('../../db/db.json');
-const { getNotes, saveNote, deleteNote, renderActiveNote, handleNoteSave, handleNoteDelete, handleNoteView,
-handleNewNoteView, handleRenderSaveBtn, renderNoteList, getAndRenderNotes } = require('../../public/assets/js/index');
+const db = require('../../db/db.json');
+const { v4: uuidv4 } = require('uuid');
 
-router.get('/api/notes', (req, res) => {
-    let results = notes;
-    if (req.query) {
-        results = getNotes(req.query, results);
-    }
-    res.json(results);
+router.get('/notes', (req, res) => {
+    fs.readFile("./db/db.json", (err, data) => {
+        if (err) throw err;
+        console.log(data);
+        res.json(JSON.parse(data));
+      })
 });
 
-// router.post('/api/notes', (req, res) => {
-//     req.body.id = notes.length.toString();
+router.post('/notes', (req, res) => {
+    fs.readFile("./db/db.json", (err, data) => {
+        if (err) throw err;
+        let object = {
+            ...req.body, 
+            id: uuidv4()
+        };
+        result = JSON.parse(data);
+        string = JSON.stringify([...result, object]);
+        console.log(object);
 
-//     if ()
-// })
+        fs.writeFile("./db/db.json", string, (err, data) => {
+            if (err) throw err;
+            console.log(string);
+            res.json(string)
+        })
+        // console.log(result);
+        // console.log(req.body);
+        // console.log([...result, req.body]);
+      })
+})
+
+router.delete('/notes', (req, res) => {
+    
+})
 
 module.exports = router;

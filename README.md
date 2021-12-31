@@ -14,7 +14,7 @@ The user clicks "Get Started," and is taken to another html page where they can 
 
 ## Webpage
 
-The following image shows a screenshot of the application: ![ApplicationScreenshot] (./assets/images/note-taker-site.png)
+The following image shows a screenshot of the application: ![ApplicationScreenshot](./assets/images/note-taker-site.png)
 
 You can access the GitHub repository here: https://github.com/fssaberi/note-taker.git. 
 
